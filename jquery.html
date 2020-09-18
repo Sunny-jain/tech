@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                    $("#a").animate({left: "1170px"},1500)
+                    $("#a").fadeOut(500)
+                    $("#b").animate({right:"1170px"},1500)
+                    $("#b").fadeOut(500)
+                    $("#c").slideDown(2000)
+            $("#s").click(function(){
+                $("#d").slideDown();
+            });
+            });
+        </script>
+    </head>
+    <body>
+        <div style="background-color: red;position:absolute;width:100px;height:100px;margin-left: 30px;" id="a"></div>
+        <div style="background-color: gray;position: absolute;width: 100px;height: 100px;margin-left: 1200px;" id="b"></div>
+        <div style="position: absolute;margin-left: 600px;font-size:40px;display: none;background-color: darkgray;" id="c">welcome</div>
+        <br><br><br><br><br><br><br>
+        <button id="s">click here</button>
+        <div style="width:500px;height:100px; background-color: gray;display: none;" id="d">hello, we are doing jquery</div>
+
+    </body>
+</html>

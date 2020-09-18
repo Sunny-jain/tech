@@ -1,0 +1,268 @@
+<html>
+    <body>
+        <table>
+            <tr>
+                <td>
+                    First Name:
+                </td>
+                <td>
+                    <input type="text" name="name" id="fn" oninput="fname()">
+                </td>
+                <td id="1">
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Last Name:
+                </td>
+                <td>
+                    <input type="text" name="name" id="ln" oninput="lname()">
+                </td>
+                <td id="2">
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Email:
+                </td>
+                <td>
+                    <input type="text" name="name" id="email" oninput="email()">
+                </td>
+                <td id="3">
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    user ID:
+                </td>
+                <td>
+                    <input type="text" name="name" id="id" oninput="bd()">
+                </td>
+                <td id="4">    
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Plese choose:
+                </td>
+                <td>
+                    <select id="ps" onchange="sele()">
+                        <option>please choose</option>
+                        <option>al</option>
+                        <option>f</option>
+                        <option> ergerg</option>
+                    </select>
+                </td>
+                <td id="5">
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Password:
+                </td>
+                <td>
+                    <input type="password" name="name" id="psd" oninput="psd()">
+                </td>
+                <td id="6">
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Confirm Password:
+                </td>
+                <td>
+                    <input type="password" name="name" id="cpsd" oninput="cpsd()">
+                </td>
+                <td id="7">
+
+                </td>
+            </tr>
+            <tr>
+                <td><button onclick="formValidation()">Submit</button></td>
+                <td id="p">
+
+                </td>
+            </tr>
+        </table>
+        <script>
+            var a=0,s=0,d=0,f=0,g=0,h=0,j=0;
+            function formValidation()
+            {
+                var q0=document.getElementById("fn").value;
+                var q1=document.getElementById("ln").value;
+                var q2=document.getElementById("email").value;
+                var q3=document.getElementById("id").value;
+                var q4=document.getElementById("ps").value;
+                var q5=document.getElementById("psd").value;
+                var q6=document.getElementById("cpsd").value;
+                if(a==1 && s==1 && d==1&&f==1&g==1&&h==1&&j==1)
+                {
+                    
+                    document.getElementById("p").innerHTML="saved"
+                    document.getElementById("fn").value="";
+                    document.getElementById("ln").value="";
+                    document.getElementById("email").value="";
+                    document.getElementById("id").value="";
+                    document.getElementById("ps").value="";
+                    document.getElementById("psd").value="";
+                    document.getElementById("cpsd").value="";
+                }
+                if(q0.length==0)
+                {
+                    document.getElementById('1').innerHTML="Please enter your first name";
+                    document.getElementById('1').style="color:red;"
+                }
+                
+                if(q1.length==0)
+                {
+                    document.getElementById('2').innerHTML="Please enter your last name";
+                    document.getElementById('2').style="color:red;"
+                }
+                
+                   if(q2.length==0)
+                {
+                    document.getElementById('3').innerHTML="Please enter your email";
+                    document.getElementById('3').style="color:red;"
+                }
+               
+                    if(q3.length==0)
+                {
+                    document.getElementById('4').innerHTML="Please enter your user id";
+                    document.getElementById('4').style="color:red;"
+                }
+               
+                     if(q4=="please choose")
+                {
+                    document.getElementById('5').innerHTML="Please choose some value";
+                    document.getElementById('5').style="color:red;"
+                }
+                
+                     if(q5.length==0)
+                {
+                    document.getElementById('6').innerHTML="Please enter password";
+                    document.getElementById('6').style="color:red;"
+                }
+                if(q6.length==0)
+                {
+                    document.getElementById('7').innerHTML="Please enter password";
+                    document.getElementById('7').style="color:red;"
+                }
+            }
+            function fname()
+            {
+                var x=document.getElementById("fn").value;
+                var exp=/^[a-zA-Z]+$/;
+                if(x.match(exp))
+                {
+                    document.getElementById("1").innerHTML="OK";
+                    document.getElementById("1").style.color='grey';
+                    a=1;
+                }
+                else{
+                    document.getElementById("1").innerHTML="error";
+                    document.getElementById("1").style.color='red';
+                }
+            }
+            function lname()
+            {
+                var x=document.getElementById("ln").value;
+                var exp=/^[a-zA-Z]+$/;
+                if(x.match(exp))
+                {
+                    document.getElementById("2").innerHTML="OK";
+                    document.getElementById("2").style.color='grey';
+                    s=1
+                }
+                else{
+                    document.getElementById("2").innerHTML="error";
+                    document.getElementById("2").style.color='red';
+                }
+            }
+            function email()
+            {
+                var x=document.getElementById("email").value;
+                var exp=/[\w\.]+\@[\w]+\.[\w]{2,4}/
+                if(x.match(exp))
+                {
+                    d=1;
+                    document.getElementById("3").innerHTML="OK";
+                    document.getElementById("3").style.color='grey';
+                }
+                else{
+                    document.getElementById("3").innerHTML="error";
+                    document.getElementById("3").style.color='red';
+                }
+            }
+            function bd()
+            {
+                var x=document.getElementById("id").value;
+
+                if(x.length>=6 && x.length<=8)
+                {
+                    f=1;
+                    document.getElementById("4").innerHTML="OK";
+                    document.getElementById("4").style.color='grey';
+                }
+                else{
+                    document.getElementById("4").innerHTML="error";
+                    document.getElementById("4").style.color='red';
+                }
+            }
+            function sele()
+            {
+               
+                var x=document.getElementById("ps").value;
+                if(x=="please choose")
+                {
+                    g=1;
+                    document.getElementById("5").innerHTML="error";
+                    document.getElementById("5").style.color='red';
+                }
+                else{
+                    document.getElementById("5").innerHTML="OK";
+                    document.getElementById("5").style.color='grey';
+                }
+            }
+            function psd()
+            {
+                var x=document.getElementById("psd").value;
+                exp1=/[0-9]/;
+                exp2=/[a-zA-Z]/;
+                exp3=/\W/;
+                if(x.match(exp1) && x.match(exp2) && x.match(exp3) && x.length>=8)
+                {
+                    h=1;
+                    document.getElementById("6").innerHTML="OK";
+                    document.getElementById("6").style.color='grey';
+                }
+                else
+                {
+                    document.getElementById("6").innerHTML="error";
+                    document.getElementById("6").style.color='red';
+                }
+            }
+            function cpsd()
+            {
+                var x=document.getElementById("psd").value;
+                var y=document.getElementById("cpsd").value;
+                if(x==y)
+                {
+                    j=1;
+                    document.getElementById("7").innerHTML="OK";
+                    document.getElementById("7").style.color='grey';
+                }
+                else
+                {
+                    document.getElementById("7").innerHTML="error";
+                    document.getElementById("7").style.color='red';
+                }
+            }
+        </script>
+    </body>
+</html>

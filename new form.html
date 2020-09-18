@@ -1,0 +1,211 @@
+<!DOCTYPE HTML>
+<HTML>
+<HEAD>
+</HEAD>
+<BODY>
+<H1>REGISTERATION FORM</H1>
+<form onsubmit="return forval()">
+            <table>
+                <tbody><tr>
+                    <td>First Name:</td>
+                    <td><input type="text" oninput="fnv()" onfocus="fnv()" id="fn"></td>
+                    <td id="fno"></td>
+                </tr>
+                 <tr>
+                    <td>Last Name</td>
+                    <td><input type="text" oninput="lnv()" onfocus="lnv()" id="ln"></td>
+                     <td id="lno"></td>
+                </tr>
+                 <tr>
+                    <td>Email:</td>
+                    <td><input type="text" oninput="emv()" onfocus="emv()"  id="em"></td>
+                     <td id="emo"></td>
+            
+                </tr>
+                 <tr>
+                    <td>User id:</td>
+                    <td><input type="text" oninput="uiv()" onfocus="uiv()"  id="ui"></td>
+                     <td id="uio"></td>
+                </tr>
+                 <tr>
+                    <td>Password:</td>
+                    <td><input type="password" oninput="pav()" onfocus="pav()"  id="pa"></td>
+                     <td id="pao"></td>
+                </tr>
+                 <tr>
+                    <td>Confirm Password:</td>
+                    <td><input type="password" oninput="cpv()" onfocus="cpv()"  id="cp"></td>
+                    <td id="cpo"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <button onclick="forval()">create</button>
+                        </td><td id="cro"></td>
+                    
+                </tr>
+            </tbody></table>
+        </form>
+<SCRIPT>
+       var fnz=0,lnz=0,emz=0,uiz=0,paz=0,cpz=0;
+            function forval()
+            {
+               
+                var fna=document.getElementById('fn').value;
+                var lna=document.getElementById('ln').value;
+                var ema=document.getElementById('em').value;
+                var uia=document.getElementById('ui').value;
+                var paa=document.getElementById('pa').value;
+                var cpa=document.getElementById('cp').value;
+                if(fnz==1&&lnz==1&&emz==1&&uiz==1&&paz==1&&cpz==1)
+                {document.getElementById("cro").innerHTML="Saved sucessfully";
+                  return true;
+                 }
+                if(fna.length==0)
+                {
+                    document.getElementById('fno').innerHTML="Please enter your first name";
+                    document.getElementById('fno').style="color:red;"
+                }
+                
+                if(lna.length==0)
+                {
+                    document.getElementById('lno').innerHTML="Please enter your last name";
+                    document.getElementById('lno').style="color:red;"
+                }
+                
+                   if(ema.length==0)
+                {
+                    document.getElementById('emo').innerHTML="Please enter your email";
+                    document.getElementById('emo').style="color:red;"
+                }
+               
+                    if(uia.length==0)
+                {
+                    document.getElementById('uio').innerHTML="Please enter your user id";
+                    document.getElementById('uio').style="color:red;"
+                }
+               
+                     if(paa.length==0)
+                {
+                    document.getElementById('pao').innerHTML="Please enter your password";
+                    document.getElementById('pao').style="color:red;"
+                }
+                
+                     if(cpa.length==0)
+                {
+                    document.getElementById('cpo').innerHTML="Please enter your user id";
+                    document.getElementById('cpo').style="color:red;"
+                }
+                
+                return false;
+                
+            }
+            
+            function fnv()
+            {
+                var fna=document.getElementById('fn').value;
+                var mat=/^[a-zA-Z]+$/;
+                if(fna.match(mat))
+                {
+                document.getElementById('fno').innerHTML="OK!";
+                document.getElementById('fno').style="color:black;";
+                fnz=1;
+                }
+                else{
+                document.getElementById('fno').innerHTML="Please enter your valid name";
+                    document.getElementById('fno').style="color:red;";
+                }
+                
+            }
+             function lnv()
+            {
+                var fna=document.getElementById('ln').value;
+                var mat=/^[a-zA-Z]+$/;
+                if(fna.match(mat))
+                {
+                document.getElementById('lno').innerHTML="OK!";
+                document.getElementById('lno').style="color:black;";
+               lnz=1;
+                }
+                else{
+                document.getElementById('lno').innerHTML="Please enter your valid name";
+                    document.getElementById('lno').style="color:red;";
+                }
+                
+            }
+              function emv()
+            {
+                var fna=document.getElementById('em').value;
+                var mat=/^.+@.+\.[a-zA-Z]+$/;
+                if(fna.match(mat))
+                {
+                document.getElementById('emo').innerHTML="OK!";
+                document.getElementById('emo').style="color:black;";
+              emz=1;
+                }
+                else{
+                document.getElementById('emo').innerHTML="Please enter your valid name";
+                    document.getElementById('emo').style="color:red;";
+                }
+                
+            }
+             function pav()
+            {
+                var fna=document.getElementById('pa').value;
+            
+                if(fna.length!=0)
+                {
+                document.getElementById('pao').innerHTML="OK!";
+                document.getElementById('pao').style="color:black;";
+               paz=1;
+                }
+                else{
+                document.getElementById('pao').innerHTML="Please enter your valid name";
+                    document.getElementById('pao').style="color:red;";
+                }
+                
+            }
+                  function cpv()
+            {
+                var fna=document.getElementById('cp').value;
+                var paa=document.getElementById('pa').value;
+                
+                if(fna.length!=0)
+                {
+                    if(paa==fna)
+                    {
+                document.getElementById('cpo').innerHTML="OK!";
+                document.getElementById('cpo').style="color:black;";
+                
+                cpz=1;
+                    }
+                    else{
+                         document.getElementById('cpo').innerHTML="Your password does not match ";
+                    document.getElementById('cpo').style="color:red;";    
+                    }
+                }
+                else{
+                document.getElementById('cpo').innerHTML="Your password donot match!";
+                    document.getElementById('cpo').style="color:red;";
+                }
+                
+            }
+                   function uiv()
+            {
+                var fna=document.getElementById('ui').value;
+                var mat=/^[a-zA-Z0-9]+$/;
+                if(fna.match(mat))
+                {
+                document.getElementById('uio').innerHTML="OK!";
+                document.getElementById('uio').style="color:black;";
+               uiz=1;
+                }
+                else{
+                document.getElementById('uio').innerHTML="Please enter your User id";
+                    document.getElementById('uio').style="color:red;";
+                    
+                }
+                
+            }
+</SCRIPT>
+</BODY>
+</HTML>

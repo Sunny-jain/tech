@@ -1,0 +1,60 @@
+form
+{
+    width:20%;
+    height:57%;
+    margin-top: 125px;
+    margin-left: 42%;
+    color: #fff;
+    background-color: black;
+    padding: 10px;
+    font-family:sans-serif;
+    box-sizing: border-box;
+    border-radius: 10%;
+}
+.box
+{
+    background:transparent;
+    color: white;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    font-size: 11px;
+    padding: 5px;
+}
+body
+{
+    background-image: url(login%20Background.jpg);
+    background-size: cover;
+}
+.submit
+{
+    height: 25px;
+    background: #fb2525;
+    color: #fff;
+    font-size: 15px;
+    border-radius: 20px;
+    width: 50%;
+    margin-left: 25%;
+    border: none;
+}
+.submit:hover
+{
+    border: none;
+    cursor: pointer;
+    background: #ffc107;
+    color:#000;
+}
+.select
+{
+    background:transparent;
+    color: darkgray;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    font-size: 11px;
+    padding: 5px;
+}
+label
+{
+    text-align: center;
+}
